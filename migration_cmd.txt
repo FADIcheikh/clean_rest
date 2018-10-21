@@ -1,0 +1,10 @@
+######## Migrations ############
+I) python entry_point.py db init*
+
+*****if model changes******
+
+II) python entry_point.py db migrate
+III) python entry_point.py db upgrade
+
+######## RUN ############
+python entry_point.py run
