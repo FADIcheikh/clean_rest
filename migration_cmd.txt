@@ -1,5 +1,5 @@
 ######## Migrations ############
-I) python entry_point.py db init*
+I) python entry_point.py db init
 
 *****if model changes******
 
