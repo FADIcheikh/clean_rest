@@ -62,7 +62,6 @@ def update_a_user(data):
 
     else:
 
-
         user.email = data['email']
         user.password=data['password']
         user.nom=data['nom']
@@ -73,6 +72,25 @@ def update_a_user(data):
             'message': 'user updated.',
         }
         return response_object,200
+
+def delete_a_user(_id):
+    user = User.query.filter_by(id=_id).first()
+    if not user:
+        response_object = {
+            'status': 'fail',
+            'message': 'there is no user with the given identifier',
+        }
+        return response_object,400
+    else:
+        db.session.delete(user)
+        db.session.commit()
+        response_object = {
+            'status': 'success',
+            'message': 'user deleted',
+        }
+        return response_object,200
+
+
 
 
 
