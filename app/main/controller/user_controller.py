@@ -2,7 +2,7 @@ from flask import request
 from flask_restplus import Resource
 
 from ..util.userDTO import UserDTO
-from ..service.user_service import  get_all_users,get_a_user
+from ..service.user_service import  get_all_users,get_a_user,add_a_user
 
 
 api = UserDTO.api
@@ -17,6 +17,15 @@ class UserList(Resource):
     def get(self):
         return get_all_users()
 
+    """ADD"""
+
+    @api.expect(_user, 'new user')
+    @api.doc('Add a user')
+    @api.response(201, 'User created.')
+    def post(self):
+        data = request.json
+        return add_a_user(data=data)
+
 
 
 """GET BY ID"""
@@ -25,5 +34,6 @@ class UserList(Resource):
 class User(Resource):
     @api.doc('get_user_by_id')
     @api.marshal_with(_user, envelope='data')
+    @api.response(404, 'There is no user with the given identifier.')
     def get(self,_id):
         return get_a_user(_id)
