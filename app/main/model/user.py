@@ -3,7 +3,6 @@ import  json
 from app.main import db
 import flask_bcrypt
 
-
 class User(db.Model):
     __tablename__ = 'user'
 
@@ -46,3 +45,7 @@ class User(db.Model):
             return True
         else:
             return False
+
+
+
+

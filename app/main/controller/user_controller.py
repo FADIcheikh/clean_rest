@@ -2,14 +2,13 @@ from flask import request
 from flask_restplus import Resource
 
 from ..util.userDTO import UserDTO
-from ..service.user_service import  get_all_users,get_a_user,add_a_user,update_a_user,delete_a_user
+from ..service.user_service import get_all_users,get_a_user,add_a_user,update_a_user,delete_a_user
 
 
 api = UserDTO.api
 _user = UserDTO.user
 """GET ALL"""
 @api.route('/')
-@api.route('/<_id>')
 class UserList(Resource):
     @api.doc('get_all_users')
     @api.marshal_list_with(_user, envelope='data')
@@ -38,10 +37,6 @@ class UserList(Resource):
         data = request.json
         return update_a_user(data=data)
 
-    """DELETE"""
-
-
-
 
 """GET BY ID"""
 @api.route('/<_id>')
@@ -54,6 +49,7 @@ class User(Resource):
     def get(self,_id):
         return get_a_user(_id)
 
+    """DELETE"""
     @api.doc('delete a user')
     @api.response(200, 'User deleted.')
     @api.response(400, 'there is no user with the given identifier.')

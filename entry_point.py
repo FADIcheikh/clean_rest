@@ -5,6 +5,8 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager # writing external scripts in Flask (migration commands in this case)
 from app import blueprint
 from app.main.model import user
+from app.main.model import article
+from app.main.model import commentaire
 
 from app.main import create_app, db
 
