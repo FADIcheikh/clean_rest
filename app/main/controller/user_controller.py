@@ -11,7 +11,7 @@ _user = UserDTO.user
 @api.route('/')
 class UserList(Resource):
     @api.doc('get_all_users')
-    @api.marshal_list_with(_user, envelope='data')
+    @api.marshal_list_with(_user, envelope='data_users')
     @api.response(204, 'There is no users in the DB.')
     def get(self):
         return get_all_users()
