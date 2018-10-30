@@ -1,8 +1,6 @@
 from sqlalchemy import Column, String, Integer, Date
 from app.main import db
 
-commentaire=db.Column(db.String(500))
-
 
 commentaires = db.Table('commentaires',
                         db.Column('id_article', db.Integer, db.ForeignKey('article.id'), primary_key=True),
