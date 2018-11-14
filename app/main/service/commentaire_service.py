@@ -1,11 +1,12 @@
 from app.main import db
-from app.main.model.article import Article
+from app.main.model.commentaire import Commentaire
 
 
 
 
-def get_comments_article(id_article):
-    list_comments = Article.query.filter_by(id=id_article).first().commentaires
+def get_comments_article():
+    #list_comments = Commentaire.query.filter_by(id_article=id_article)
+    list_comments = Commentaire.query.all()
     print type(list_comments)
     print list_comments
     return list_comments

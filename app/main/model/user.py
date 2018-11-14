@@ -2,6 +2,7 @@ from sqlalchemy import Column, String, Integer, Date
 import  json
 from app.main import db
 import flask_bcrypt
+from sqlalchemy.orm import relationship
 
 class User(db.Model):
     __tablename__ = 'user'
@@ -10,6 +11,11 @@ class User(db.Model):
     nom = db.Column(db.String(100))
     email = db.Column(db.String(255), unique=True, nullable=False)
     password_hash = db.Column(db.String(100))
+    #navigation prop
+    articles = relationship(
+        'Article',
+        secondary='commentaire'
+    )
 
     @property
     def password(self):
