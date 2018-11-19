@@ -3,14 +3,9 @@ from app.main.model.commentaire import Commentaire
 
 
 
-
-def get_comments_article():
-    #list_comments = Commentaire.query.filter_by(id_article=id_article)
-    list_comments = Commentaire.query.all()
-    print type(list_comments)
+def get_comments_article(id_article):
+    list_comments = Commentaire.query.filter_by(id_article=id_article).all()
     print list_comments
-    return list_comments
-    """
     if not list_comments:
         response_object = {
             'status': 'fail',
@@ -19,4 +14,3 @@ def get_comments_article():
         return response_object, 204
     else:
         return list_comments
-    """
