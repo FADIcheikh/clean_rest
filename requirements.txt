@@ -21,7 +21,7 @@ ipaddress==1.0.22
 itsdangerous==0.24
 Jinja2==2.10
 jsonschema==2.6.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 pycparser==2.19
 PyJWT==1.6.4
@@ -58,7 +58,7 @@ ipaddress==1.0.22
 itsdangerous==0.24
 Jinja2==2.10
 jsonschema==2.6.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 pycparser==2.19
 PyJWT==1.6.4
@@ -99,7 +99,7 @@ ipaddress==1.0.22
 itsdangerous==0.24
 Jinja2==2.10
 jsonschema==2.6.0
-Mako==1.0.7
+Mako==1.2.2
 MarkupSafe==1.0
 mock==2.0.0
 pbr==5.0.0
